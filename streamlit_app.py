@@ -57,6 +57,18 @@ uploaded_file = st.sidebar.file_uploader(
     "1️⃣ Upload Test Dataset (CSV)",
     type=["csv"]
 )
+# Download sample test data button 
+TEST_DATA_PATH = os.path.join("models", "data", "test_data.csv")
+if os.path.exists(TEST_DATA_PATH):
+    with open(TEST_DATA_PATH, "rb") as f:
+        st.sidebar.download_button(
+            label="⬇️ Download Sample Test Data",
+            data=f,
+            file_name="test_data.csv",
+            mime="text/csv",
+            help="Download the held-out test split to try the app"
+        )
+
 
 selected_model_name = st.sidebar.selectbox(
     "2️⃣ Select Model",
