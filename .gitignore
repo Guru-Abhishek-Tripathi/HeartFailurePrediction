@@ -43,7 +43,6 @@ Thumbs.db
 
 # Outputs
 *.png
-*.csv
 model_comparison_results.csv
 confusion_matrices.png
 model_comparison.png
