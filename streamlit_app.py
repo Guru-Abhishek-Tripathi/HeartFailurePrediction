@@ -41,7 +41,9 @@ html, body, [class*="css"] {
 }
 
 /* ── Hide default Streamlit chrome ── */
-#MainMenu, footer, header { visibility: hidden; }
+#MainMenu { visibility: hidden; }
+footer { visibility: hidden; }
+header { visibility: visible; background: transparent !important; }
 .block-container { padding-top: 1.5rem !important; padding-bottom: 2rem !important; }
 
 /* ── Header Banner ── */
@@ -167,6 +169,32 @@ html, body, [class*="css"] {
     border: 1px dashed #1e3a6e !important;
     border-radius: 10px !important;
 }
+[data-testid="stFileUploader"] > div {
+    background: #0d1f3c !important;
+    color: #c8d6f0 !important;
+}
+[data-testid="stFileUploaderDropzone"] {
+    background: #0d1f3c !important;
+    color: #c8d6f0 !important;
+}
+[data-testid="stFileUploaderDropzone"] * {
+    color: #c8d6f0 !important;
+}
+[data-testid="stFileUploaderDropzone"] button {
+    background: #0a2a5e !important;
+    border: 1px solid #1e5aaa !important;
+    color: #c8d6f0 !important;
+    border-radius: 8px !important;
+}
+            
+[data-testid="stSidebar"] * {
+    color: #c8d6f0;
+}
+[data-testid="stSidebarContent"] small,
+[data-testid="stSidebarContent"] span {
+    color: #7a9fd4 !important;
+}
+                        
 .stSelectbox > div > div {
     background: #0d1f3c !important;
     border: 1px solid #1e3a6e !important;
@@ -205,6 +233,26 @@ html, body, [class*="css"] {
     border: 1px solid #1e3a6e !important;
     border-radius: 10px !important;
     overflow: hidden;
+}
+[data-testid="stDataFrame"] thead tr th {
+    background-color: #0a2a5e !important;
+    color: #4d9fff !important;
+    font-family: 'Space Mono', monospace !important;
+    font-size: 0.75rem !important;
+    letter-spacing: 1px !important;
+    border-bottom: 1px solid #1e3a6e !important;
+}
+[data-testid="stDataFrame"] tbody tr td {
+    background-color: #0d1f3c !important;
+    color: #c8d6f0 !important;
+    border-bottom: 1px solid #1e3a6e !important;
+}
+[data-testid="stDataFrame"] tbody tr:hover td {
+    background-color: #1e3a6e !important;
+}
+[data-testid="stDataFrame"] {
+    border: 1px solid #1e3a6e !important;
+    border-radius: 10px !important;
 }
 
 /* ── Info / Error boxes ── */
@@ -323,13 +371,12 @@ if uploaded_file is None:
         border-radius:14px;
         padding:2.5rem;
         text-align:center;
-        color:#3d5a8a;
+        color:#7a9fd4;
         font-family:'Space Mono',monospace;
-        font-size:0.85rem;
+        font-size:1rem;
         letter-spacing:1px;
     ">
-        &#8592; DOWNLOAD SAMPLE DATA &nbsp;&middot;&nbsp; UPLOAD CSV &nbsp;&middot;&nbsp;
-        SELECT MODEL &nbsp;&middot;&nbsp; RUN
+        <span style="font-size:1.5rem;">&#8592;</span> &nbsp;&nbsp; DOWNLOAD TEST SAMPLE DATA &nbsp;&middot;&nbsp; UPLOAD CSV &nbsp;&middot;&nbsp; RUN
     </div>
     """, unsafe_allow_html=True)
 
@@ -463,10 +510,23 @@ else:
 
             st.markdown('<div class="section-heading">Interpretation</div>', unsafe_allow_html=True)
             c1, c2, c3 = st.columns(3)
-            c1.info(f"**Precision**\n\n{class_1['precision']*100:.1f}% of predicted disease cases were correct.")
-            c2.info(f"**Recall**\n\n{class_1['recall']*100:.1f}% of actual disease cases were caught.")
-            c3.info(f"**F1-Score**\n\n{class_1['f1-score']:.4f} — harmonic mean of precision & recall.")
+            c1.markdown(f"""<div class="metric-card" style="text-align:left">
+                <div class="metric-label">Precision</div>
+                <div style="color:#ffffff;font-size:0.95rem;margin-top:0.5rem">
+                    {class_1['precision']*100:.1f}% of predicted disease cases were correct.
+                </div></div>""", unsafe_allow_html=True)
 
+            c2.markdown(f"""<div class="metric-card" style="text-align:left">
+                <div class="metric-label">Recall</div>
+                <div style="color:#ffffff;font-size:0.95rem;margin-top:0.5rem">
+                    {class_1['recall']*100:.1f}% of actual disease cases were caught.
+                </div></div>""", unsafe_allow_html=True)
+
+            c3.markdown(f"""<div class="metric-card" style="text-align:left">
+                <div class="metric-label">F1-Score</div>
+                <div style="color:#ffffff;font-size:0.95rem;margin-top:0.5rem">
+                    {class_1['f1-score']:.4f} — harmonic mean of precision &amp; recall.
+                </div></div>""", unsafe_allow_html=True)
 # -------------------------------------------------
 # Footer
 # -------------------------------------------------
