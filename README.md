@@ -76,7 +76,7 @@ The goal is to implement, evaluate, and compare six machine learning classificat
 
 ```
 project-folder/
-│── app.py                  # Streamlit web application
+│── streamlit_app.py        # Streamlit web application
 │── requirements.txt        # Python dependencies
 │── README.md               # Project documentation
 │── model/
