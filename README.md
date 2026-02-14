@@ -138,7 +138,7 @@ streamlit run app.py
 ## Deployment
 
 The app is deployed on **Streamlit Community Cloud**.  
-Live App: 
+Live App: https://heartfailureprediction-at.streamlit.app/
 
 ---
 
