@@ -17,7 +17,7 @@ The goal is to implement, evaluate, and compare six machine learning classificat
 | Property | Value |
 |---|---|
 | Total Instances | 918 |
-| Number of Features | 11 (+ 1 target) |
+| Number of Features | 12 ( 1 target) |
 | Target Column | `HeartDisease` (0 = No Disease, 1 = Disease) |
 | Class Distribution (Train) | Class 0: 328 samples, Class 1: 406 samples |
 | Train / Test Split | 734 / 184 (80/20, stratified) |
@@ -76,14 +76,14 @@ The goal is to implement, evaluate, and compare six machine learning classificat
 
 ```
 project-folder/
-│── app.py                  # Streamlit web application
+│── streamlit_app.py        # Streamlit web application
 │── requirements.txt        # Python dependencies
 │── README.md               # Project documentation
-│── MFML_Assignment2.ipynb  # Jupyter notebook with full ML pipeline
 │── model/
 │   ├── Logistic_Regression.pkl
 │   ├── Decision_Tree.pkl
 │   ├── KNN.pkl
+|   │── heartfailureprediction.ipynb  # Jupyter notebook with full ML pipeline
 │   ├── Gaussian_Naive_Bayes.pkl
 │   ├── Random_Forest.pkl
 │   ├── XGBoost.pkl
@@ -123,7 +123,7 @@ kagglehub
 
 ```bash
 # Clone the repository
-git clone https://github.com/<your-username>/<your-repo>.git
+git clone  https://github.com/Guru-Abhishek-Tripathi/HeartFailurePrediction.git
 cd <your-repo>
 
 # Install dependencies
@@ -138,7 +138,7 @@ streamlit run app.py
 ## Deployment
 
 The app is deployed on **Streamlit Community Cloud**.  
-Live App: 
+Live App: https://heartfailureprediction-at.streamlit.app/
 
 ---
 
