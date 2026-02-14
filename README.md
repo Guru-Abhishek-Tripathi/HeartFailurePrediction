@@ -17,7 +17,7 @@ The goal is to implement, evaluate, and compare six machine learning classificat
 | Property | Value |
 |---|---|
 | Total Instances | 918 |
-| Number of Features | 11 (+ 1 target) |
+| Number of Features | 12 ( 1 target) |
 | Target Column | `HeartDisease` (0 = No Disease, 1 = Disease) |
 | Class Distribution (Train) | Class 0: 328 samples, Class 1: 406 samples |
 | Train / Test Split | 734 / 184 (80/20, stratified) |
