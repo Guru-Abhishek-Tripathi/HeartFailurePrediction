@@ -79,11 +79,11 @@ project-folder/
 │── app.py                  # Streamlit web application
 │── requirements.txt        # Python dependencies
 │── README.md               # Project documentation
-│── MFML_Assignment2.ipynb  # Jupyter notebook with full ML pipeline
 │── model/
 │   ├── Logistic_Regression.pkl
 │   ├── Decision_Tree.pkl
 │   ├── KNN.pkl
+|   │── heartfailureprediction.ipynb  # Jupyter notebook with full ML pipeline
 │   ├── Gaussian_Naive_Bayes.pkl
 │   ├── Random_Forest.pkl
 │   ├── XGBoost.pkl
